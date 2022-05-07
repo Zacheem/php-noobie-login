@@ -14,12 +14,10 @@
 
     <head>
         <title>Noobie login success</title>
-
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="author" content="Zacheem" />
-        <meta name="description" content="Easy peasy login for php beginners 😉" />
-        
+        <meta name="author" content="AdhirSaurio" />
+        <meta name="description" content="Easy peasy login for php beginners with PHP7, PDO, ajax and SPA" />
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -28,13 +26,13 @@
 
     </head> 
 
-    <body id="page-top">
+    <body id="page-top" class="d-flex flex-column min-vh-100">
 
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">Noobie login Success</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menú
+                    Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -46,54 +44,36 @@
         </nav>
         
         <section class="page-section">
-            <div class="container">
+            <div class="container text-center">
                 
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Success</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Success</h2>
                 <p class="lead mb-0"> Welcome @<?php echo  $mail; ?></p>
                 
             </div>
         </section>
 
         <!-- Footer-->
-        <footer class="footer text-center">
+        <footer class="footer text-center mt-auto">
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            Elm Street
-                            <br />
-                            Springwood, Ohio
-                        </p>
-                    </div>
-
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Follow me</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-telegram"></i></a>
-                    </div>
-
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <h4 class="text-uppercase mb-4">About</h4>
-                        <p class="lead mb-0">Easy-peasy login for php beginners
-                        </p>
+                        <p class="lead mb-0">Easy-peasy login for php beginners <a href="https://github.com/adhirsaurio?tab=repositories"><i class="fab fa-github-alt"></i></a></p>
                     </div>
-                    
+
                 </div>
             </div>
         </footer>
 
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Noobie login 2021</small></div>
+            <div class="container"><small>Copyright © Noobie login 2022</small></div>
         </div>
 
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->

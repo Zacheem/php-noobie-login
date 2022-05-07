@@ -22,7 +22,8 @@ session_start();
 // require_once("dbcon.php");
 // even include("dbcon.php"); can be used
 
-$connect = new PDO("mysql:host=localhost;dbname=databaseName;charset=utf8", "User", "Password");
+$connect = new PDO("mysql:host=localhost;dbname=noobielogin;charset=utf8", "root", "");
+// $connect = new PDO("mysql:host=host;dbname=databaseName;charset=utf8", "User", "Password");
 
 try {
     if (isset($_POST["login"])) {
@@ -63,7 +64,7 @@ try {
 
 ?>
 
-<body id="page-top">
+<body id="page-top" class="d-flex flex-column min-vh-100">
 
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
@@ -82,7 +83,6 @@ try {
 
     <section class="page-section" id="contact">
         <div class="container">
-
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
@@ -111,7 +111,7 @@ try {
                             echo '<label class="text-danger">' . $message . '</label>';
                         }
                         ?>
-                        <div class="form-group">
+                        <div class="form-group text-center">
                             <button class="btn btn-primary btn-xl" type="submit" name="login">LOGIN</button>
                         </div>
                     </form>
@@ -122,31 +122,13 @@ try {
     </section>
 
     <!--Footer-->
-    <footer class="footer text-center">
+    <footer class="footer text-center mt-auto">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
-                    <p class="lead mb-0">
-                        Elm Street
-                        <br />
-                        Springwood, Ohio
-                    </p>
-                </div>
-
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Follow me</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-telegram"></i></a>
-                </div>
-
-                <div class="col-lg-4">
+                <div class="col-lg-12">
                     <h4 class="text-uppercase mb-4">About</h4>
-                    <p class="lead mb-0">Easy-peasy login for php beginners
-                    </p>
+                    <p class="lead mb-0">Easy-peasy login for php beginners <a href="https://github.com/adhirsaurio?tab=repositories"><i class="fab fa-github-alt"></i></a></p>
                 </div>
 
             </div>
@@ -155,7 +137,7 @@ try {
 
     <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Copyright © Noobie login 2021</small></div>
+        <div class="container"><small>Copyright © Noobie login 2022</small></div>
     </div>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
