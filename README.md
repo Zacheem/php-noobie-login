@@ -1,3 +1,5 @@
+![Responsive](https://img.shields.io/badge/Responsive-Yes-ff69b4)
+![Bootstrap](https://img.shields.io/badge/bootstrap-5.2.3-black)
 # noobie-login
 Easy peasy login for php beginners to learn how sessions work and how easy is to do a Login
 

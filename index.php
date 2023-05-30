@@ -17,50 +17,36 @@
 </head>
 
 <?php
-session_start();
-// You can use require_once() if you want instead of direct connection
-// require_once("dbcon.php");
-// even include("dbcon.php"); can be used
+    session_start();
+    // You can use require_once() if you want instead of a direct connection
+    // require_once("dbcon.php");
+    // even include("dbcon.php"); can be used
 
-$connect = new PDO("mysql:host=localhost;dbname=noobielogin;charset=utf8", "root", "");
-// $connect = new PDO("mysql:host=host;dbname=databaseName;charset=utf8", "User", "Password");
+    $connect = new PDO("mysql:host=host;dbname=databaseName;charset=utf8", "User", "Password");
 
-try {
-    if (isset($_POST["login"])) {
-        if (empty($_POST["email"]) || empty($_POST["pass"])) {
-            $message = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true"><b>x</b></button><label>All fields are required</label></div>';
-        } else {
-            $statement = $connect->prepare("SELECT * FROM users WHERE email = :email or pass = :pass");
-            $statement->execute(
-                array(
-                    'email' => $_POST["email"],
-                    'pass'  => $_POST["pass"]
-                )
-            );
-            $result = $statement->fetchAll();
+    try {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 
-            if (sizeof($result) > 0) {
-
-                foreach ($result as $row) {
-
-                    if ($row["email"] == $_POST['email'] && $row["pass"] == $_POST['pass']) {
-                        $_SESSION["email"] = $_POST["email"];
-
-                        print "<meta http-equiv='refresh' content='0;url=success.php'>";
-                        // header("location:success.php");
-
-                    } else {
-                        $message = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button><label>Wrong credentials</label></div>';
-                    }
-                }
+            if (empty($_POST["email"]) || empty($_POST["pass"])) {
+                $message = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true"><b>x</b></button><label>All fields are required</label></div>';
             } else {
-                $message = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button><label>Email & password not registered</label></div>';
+                $statement = $connect->prepare("SELECT * FROM users WHERE email = ? AND pass = ?");
+                $statement->execute([$_POST["email"], $_POST["pass"]]);
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+                if ($result) {
+                    $_SESSION["email"] = $_POST["email"];
+                    // header("location:success.php");
+                    print "<meta http-equiv='refresh' content='0;url=success.php'>";
+                    exit();                      
+                } else {
+                    $message = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button><label>Email & password not registered</label></div>';
+                }
             }
         }
+    } catch (PDOException $error) {
+        $message = $error->getMessage();
     }
-} catch (PDOException $error) {
-    $message = $error->getMessage();
-}
 
 ?>
 
@@ -73,11 +59,6 @@ try {
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Login</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
@@ -128,17 +109,12 @@ try {
 
                 <div class="col-lg-12">
                     <h4 class="text-uppercase mb-4">About</h4>
-                    <p class="lead mb-0">Easy-peasy login for php beginners <a href="https://github.com/adhirsaurio?tab=repositories"><i class="fab fa-github-alt"></i></a></p>
+                    <p class="lead mb-0">Easy-peasy login for php beginners <a href="http://localhost/gitRepos/php-noobie-login/success.php"><i class="fab fa-github-alt"></i></a></p>
                 </div>
 
             </div>
         </div>
     </footer>
-
-    <!-- Copyright Section-->
-    <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Copyright © Noobie login 2022</small></div>
-    </div>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
     <div class="scroll-to-top d-lg-none position-fixed">

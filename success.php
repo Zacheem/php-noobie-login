@@ -23,7 +23,6 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="assets/css/styles.css" rel="stylesheet" />
-
     </head> 
 
     <body id="page-top" class="d-flex flex-column min-vh-100">
@@ -52,7 +51,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Success</h2>
-                <p class="lead mb-0"> Welcome @<?php echo  $mail; ?></p>
+                <p class="lead mb-0"> Welcome <?php echo  $mail; ?></p>
                 
             </div>
         </section>
@@ -64,17 +63,12 @@
 
                     <div class="col-lg-12">
                         <h4 class="text-uppercase mb-4">About</h4>
-                        <p class="lead mb-0">Easy-peasy login for php beginners <a href="https://github.com/adhirsaurio?tab=repositories"><i class="fab fa-github-alt"></i></a></p>
+                        <p class="lead mb-0">Easy-peasy login for php beginners <a href="http://localhost/gitRepos/php-noobie-login/success.php"><i class="fab fa-github-alt"></i></a></p>
                     </div>
 
                 </div>
             </div>
         </footer>
-
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Noobie login 2022</small></div>
-        </div>
 
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
